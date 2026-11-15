@@ -1,0 +1,21 @@
+{
+  "name": "leavedesk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LeaveDesk — leave management for Ghanaian companies",
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c green,cyan \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "start": "node server/index.js",
+    "test": "node --test server/tests/"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
